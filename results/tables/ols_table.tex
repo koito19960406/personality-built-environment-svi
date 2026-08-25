@@ -1,0 +1,43 @@
+% Self-contained copy for the AAG tables file. adjustbox scales to fit width + height.
+% Source of record: reports/tables/ols_table.tex
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{OLS standardized coefficients ($\beta$) for Big Five personality traits and environmental predictors (pooled model, HC1 robust SE).}
+\label{tab:ols_betas_ours_v2}
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.85\textheight, center}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Predictor} & \textbf{Extraversion} & \textbf{Agreeableness} & \textbf{Conscientiousness} & \textbf{Neuroticism} & \textbf{Openness} \\
+\midrule
+\multicolumn{6}{l}{\textit{Built environment features}} \\
+Greenery & $-0.021$ & $-0.293$ & $-0.532^{**}$ & $0.177$ & $0.152$ \\
+Open Space & $-0.161$ & $0.012$ & $-0.544^{**}$ & $0.200$ & $-0.128$ \\
+Building & $0.286$ & $-0.295$ & $-0.370^{\dagger}$ & $0.035$ & $0.090$ \\
+Road & $0.272$ & $-0.079$ & $-0.328^{\dagger}$ & $-0.055$ & $0.012$ \\
+Active Mobility Infrastructure & $-0.113$ & $-0.097$ & $0.012$ & $0.043$ & $-0.039$ \\
+Active Mobility Presence & $-0.144$ & $0.014$ & $-0.009$ & $-0.113$ & $0.047$ \\
+Vehicle Presence & $-0.145^{\dagger}$ & $-0.034$ & $-0.109$ & $0.125$ & $0.036$ \\
+Physical Boundaries & $0.030$ & $-0.262^{*}$ & $-0.297^{*}$ & $-0.124$ & $-0.090$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Individual features and controls}} \\
+Symbolic US Flag & $-0.049$ & $-0.130^{\dagger}$ & $-0.126^{\dagger}$ & $0.068$ & $-0.005$ \\
+CCTV Surveillance & $-0.112$ & $0.094$ & $0.002$ & $-0.022$ & $-0.119$ \\
+Visual Complexity & $0.093$ & $0.293^{\dagger}$ & $0.089$ & $-0.150$ & $0.080$ \\
+Male Share & $-0.040$ & $-0.064$ & $0.117$ & $0.007$ & $-0.042$ \\
+Age 15--29 & $0.221$ & $0.017$ & $0.188$ & $-0.216$ & $0.775^{***}$ \\
+Age 30--44 & $-0.001$ & $-0.191^{\dagger}$ & $-0.054$ & $-0.015$ & $0.441^{***}$ \\
+Age 45--59 & $0.064$ & $0.033$ & $-0.099$ & $-0.108$ & $0.307^{***}$ \\
+Age 60+ & $-0.016$ & $0.083$ & $0.050$ & $-0.002$ & $0.356^{**}$ \\
+Pop Density & $-0.111$ & $-0.075$ & $-0.210^{*}$ & $0.280^{**}$ & $-0.059$ \\
+Median Income & $0.374^{**}$ & $0.379^{**}$ & $0.153$ & $-0.223$ & $0.003$ \\
+Racial Diversity & $-0.170^{*}$ & $0.223^{**}$ & $0.014$ & $-0.094$ & $0.027$ \\
+\midrule
+$R^2$ & $0.180$ & $0.353$ & $0.211$ & $0.157$ & $0.467$ \\
+\textit{Adj.}\ $R^2$ & $0.102$ & $0.292$ & $0.136$ & $0.077$ & $0.416$ \\
+\bottomrule
+\multicolumn{6}{l}{\scriptsize $^{***}p<0.001$, $^{**}p<0.01$, $^{*}p<0.05$, $^{\dagger}p<0.1$. OLS pooled model with city fixed effects} \\
+\multicolumn{6}{l}{\scriptsize (San Antonio = baseline). All continuous predictors z-scored.} \\
+\end{tabular}
+\end{adjustbox}
+\end{table}

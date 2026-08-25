@@ -1,0 +1,42 @@
+% Self-contained copy for the AAG tables file. adjustbox scales to fit width + height.
+% Source of record: reports/tables/sar_table.tex
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Spatial lag standardized coefficients ($\beta$) for Big Five personality traits and environmental predictors (pooled model, Queen contiguity weights).}
+\label{tab:sar_betas_ours_v2}
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.85\textheight, center}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Predictor} & \textbf{Extraversion} & \textbf{Agreeableness} & \textbf{Conscientiousness} & \textbf{Neuroticism} & \textbf{Openness} \\
+\midrule
+\multicolumn{6}{l}{\textit{Built environment features}} \\
+Greenery & $-0.016$ & $-0.270^{\dagger}$ & $-0.506^{**}$ & $0.178$ & $0.154$ \\
+Open Space & $-0.149$ & $0.012$ & $-0.510^{**}$ & $0.202$ & $-0.089$ \\
+Building & $0.324$ & $-0.286^{\dagger}$ & $-0.305$ & $0.050$ & $0.090$ \\
+Road & $0.282^{\dagger}$ & $-0.045$ & $-0.323^{*}$ & $-0.035$ & $0.008$ \\
+Active Mobility Infrastructure & $-0.124$ & $-0.083$ & $-0.001$ & $0.046$ & $-0.038$ \\
+Active Mobility Presence & $-0.146$ & $-0.019$ & $-0.051$ & $-0.107$ & $0.039$ \\
+Vehicle Presence & $-0.165^{\dagger}$ & $-0.024$ & $-0.108$ & $0.108$ & $0.026$ \\
+Physical Boundaries & $0.010$ & $-0.217^{*}$ & $-0.290^{*}$ & $-0.130$ & $-0.106$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Individual features and controls}} \\
+Symbolic US Flag & $-0.030$ & $-0.135^{*}$ & $-0.109$ & $0.080$ & $-0.005$ \\
+CCTV Surveillance & $-0.148$ & $0.100$ & $-0.042$ & $-0.040$ & $-0.110$ \\
+Visual Complexity & $0.145$ & $0.278^{\dagger}$ & $0.140$ & $-0.113$ & $0.071$ \\
+Male Share & $-0.033$ & $-0.050$ & $0.135^{\dagger}$ & $0.009$ & $-0.045$ \\
+Age 15--29 & $0.200$ & $0.061$ & $0.153$ & $-0.210$ & $0.717^{***}$ \\
+Age 30--44 & $-0.013$ & $-0.155^{\dagger}$ & $-0.064$ & $-0.013$ & $0.431^{***}$ \\
+Age 45--59 & $0.035$ & $0.070$ & $-0.114$ & $-0.118$ & $0.297^{***}$ \\
+Age 60+ & $-0.016$ & $0.101$ & $0.025$ & $0.011$ & $0.325^{***}$ \\
+Pop Density & $-0.129$ & $-0.038$ & $-0.209^{*}$ & $0.271^{**}$ & $-0.066$ \\
+Median Income & $0.393^{*}$ & $0.328^{*}$ & $0.116$ & $-0.208$ & $-0.013$ \\
+Racial Diversity & $-0.153^{\dagger}$ & $0.197^{**}$ & $0.018$ & $-0.083$ & $0.036$ \\
+\midrule
+Pseudo $R^2$ & $0.187$ & $0.404$ & $0.252$ & $0.163$ & $0.479$ \\
+\bottomrule
+\multicolumn{6}{l}{\scriptsize $^{***}p<0.001$, $^{**}p<0.01$, $^{*}p<0.05$, $^{\dagger}p<0.1$. Spatial lag model (ML\textsubscript{Lag}), pooled with city FE} \\
+\multicolumn{6}{l}{\scriptsize (San Antonio = baseline), Queen contiguity, row-standardized weights. All continuous predictors z-scored.} \\
+\end{tabular}
+\end{adjustbox}
+\end{table}

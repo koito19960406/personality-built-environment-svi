@@ -1,0 +1,19 @@
+The dataset in data/ and the model outputs, figures, and tables in results/ are
+licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Attribution:
+
+  Ito, K., Kang, Y., Gosling, S. D., Yao, X., Potter, J., & Biljecki, F. (2026).
+  Uncovering the Associations between Human Big Five Personality Traits and
+  Built Environment Characteristics from Street View Imagery.
+  Annals of the American Association of Geographers.
+  https://doi.org/10.1080/24694452.2026.2704575
+
+Third-party inputs retain their original licenses and terms:
+
+  - US Census Bureau ZCTA boundaries and ACS estimates are in the public domain.
+  - Google Street View imagery is subject to the Google Maps Platform Terms of
+    Service and is NOT redistributed here; only derived aggregate measures are.
+  - Gosling-Potter Internet Personality Project survey responses are not
+    redistributed; only ZIP-code-level aggregates appear here.

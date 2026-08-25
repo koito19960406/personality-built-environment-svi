@@ -1,0 +1,33 @@
+% Self-contained copy for the AAG tables file. tabularx fills the page width (no
+% adjustbox: tabularx must not be wrapped in \resizebox). 11 rows fit the page height.
+% Source of record: reports/tables/segmentation_variables.tex
+\begin{table}[htbp]
+\centering
+\small
+\caption{Grouped built environment categories and their constituent variables from street view imagery analysis.}
+\label{tab:segmentation_variables}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{Category} & \textbf{Type} & \textbf{Constituent Variables} \\
+\midrule
+\multicolumn{3}{l}{\textit{Grouped categories (composite scores)}} \\
+Greenery & Ratio & Vegetation \\
+Open Space & Ratio & Sky, Terrain, Sand \\
+Building & Ratio & Building \\
+Road & Ratio & Road, Service Lane \\
+Active Mobility Infrastructure & Ratio & Sidewalk, Bike Lane, Pedestrian Area \\
+Active Mobility Presence & Count & Person, Bicycle, Bicyclist \\
+Vehicle Presence & Count & Car, Truck, Bus, Motorcycle, Trailer, Other Vehicle, Caravan \\
+Physical Boundaries & Ratio & Fence, Wall, Barrier \\
+\midrule
+\multicolumn{3}{l}{\textit{Individual features (not grouped)}} \\
+Symbolic US Flag & Count & American Flag \\
+CCTV Surveillance & Count & CCTV Camera \\
+Visual Complexity & --- & Shannon entropy of all segmentation pixel ratios \\
+\bottomrule
+\end{tabularx}
+\begin{flushleft}
+\footnotesize
+Ratio variables are derived from semantic segmentation (pixel area proportions); count variables from object detection. For each grouped category, constituent variables were z-scored and summed to create composite scores, then re-standardized. Individual features were z-scored directly.
+\end{flushleft}
+\end{table}

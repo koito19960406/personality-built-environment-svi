@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "Replication code and data: Big Five Personality Traits and Built Environment Characteristics from Street View Imagery"
+abstract: >-
+  Replication materials for a study relating ZIP-code-level Big Five personality
+  trait scores to built environment characteristics extracted from Google Street
+  View imagery across Austin, Dallas, Houston, and San Antonio, Texas, using
+  pooled and city-specific OLS and spatial lag models.
+type: software
+license: MIT
+authors:
+  - family-names: Ito
+    given-names: Koichi
+    orcid: "https://orcid.org/0000-0001-6995-1056"
+  - family-names: Kang
+    given-names: Yuhao
+    orcid: "https://orcid.org/0000-0003-3810-9450"
+  - family-names: Gosling
+    given-names: "Samuel D."
+  - family-names: Yao
+    given-names: Xihan
+  - family-names: Potter
+    given-names: Jeff
+  - family-names: Biljecki
+    given-names: Filip
+preferred-citation:
+  type: article
+  title: >-
+    Uncovering the Associations between Human Big Five Personality Traits and
+    Built Environment Characteristics from Street View Imagery
+  authors:
+    - family-names: Ito
+      given-names: Koichi
+      orcid: "https://orcid.org/0000-0001-6995-1056"
+    - family-names: Kang
+      given-names: Yuhao
+      orcid: "https://orcid.org/0000-0003-3810-9450"
+    - family-names: Gosling
+      given-names: "Samuel D."
+    - family-names: Yao
+      given-names: Xihan
+    - family-names: Potter
+      given-names: Jeff
+    - family-names: Biljecki
+      given-names: Filip
+  journal: "Annals of the American Association of Geographers"
+  year: 2026
+  doi: "10.1080/24694452.2026.2704575"

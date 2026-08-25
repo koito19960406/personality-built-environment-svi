@@ -1,0 +1,13 @@
+# Reproduction outputs — regenerate with src/reproduce_models.py
+results/reproduced/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.env
+
+# OS
+.DS_Store

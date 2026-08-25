@@ -1,0 +1,16 @@
+# Pinned to the versions this repository was verified against on 2026-08-25
+# (macOS/arm64, Python 3.12). See README.md for the reproduction tolerances
+# observed with these versions.
+pandas==3.0.5
+numpy==2.5.2
+pyarrow==25.0.1
+geopandas==1.1.4
+shapely==2.1.2
+scipy==1.18.1
+statsmodels==0.14.6
+libpysal==4.15.0
+spreg==1.9.1
+esda==2.10.0
+
+# Only needed for the scripts in src/figures/
+matplotlib>=3.8

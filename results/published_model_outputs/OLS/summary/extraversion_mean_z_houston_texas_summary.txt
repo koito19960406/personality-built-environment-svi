@@ -1,0 +1,45 @@
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     extraversion_mean_z   R-squared:                       0.312
+Model:                             OLS   Adj. R-squared:                  0.135
+Method:                  Least Squares   F-statistic:                     2.335
+Date:                 Wed, 04 Mar 2026   Prob (F-statistic):            0.00511
+Time:                         01:46:34   Log-Likelihood:                -124.23
+No. Observations:                   94   AIC:                             288.5
+Df Residuals:                       74   BIC:                             339.3
+Df Model:                           19                                         
+Covariance Type:                   HC1                                         
+======================================================================================================
+                                         coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------
+const                                -41.7284     60.364     -0.691      0.489    -160.039      76.583
+env_greenery_z                        -0.2435      0.306     -0.797      0.426      -0.843       0.356
+env_open_space_z                      -0.1237      0.316     -0.391      0.696      -0.744       0.496
+env_building_z                         0.0378      0.456      0.083      0.934      -0.857       0.932
+env_road_z                             0.3618      0.412      0.878      0.380      -0.446       1.169
+env_active_infra_z                     0.1540      0.273      0.565      0.572      -0.380       0.688
+env_active_presence_z                 -0.4380      0.241     -1.814      0.070      -0.911       0.035
+env_vehicle_presence_z                 0.0990      0.161      0.617      0.537      -0.216       0.414
+env_physical_boundaries_z              0.6955      0.448      1.553      0.121      -0.183       1.574
+env_symbolic_us_flag_z                -0.1470      0.143     -1.028      0.304      -0.427       0.133
+env_surveillance_cctv_z               -0.1076      0.202     -0.532      0.595      -0.504       0.289
+visual_complexity_mean_z               0.5198      0.335      1.553      0.121      -0.136       1.176
+us_census_male_share_z                -0.3671      0.168     -2.190      0.029      -0.696      -0.039
+us_census_age_15_29_share_z           -0.0946      0.300     -0.315      0.753      -0.684       0.494
+us_census_age_30_44_share_z            0.4105      0.290      1.416      0.157      -0.158       0.979
+us_census_age_45_59_share_z           -0.0712      0.258     -0.276      0.782      -0.576       0.434
+us_census_age_60_plus_share_z          0.0925      0.335      0.276      0.782      -0.563       0.748
+us_census_population_density_km2_z    -0.1336      0.167     -0.801      0.423      -0.460       0.193
+acs_median_income_z                  343.8879    494.235      0.696      0.487    -624.795    1312.571
+acs_racial_diversity_z                -0.1811      0.212     -0.855      0.392      -0.596       0.234
+==============================================================================
+Omnibus:                       36.085   Durbin-Watson:                   1.796
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              117.055
+Skew:                          -1.233   Prob(JB):                     3.82e-26
+Kurtosis:                       7.879   Cond. No.                     9.10e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC1)
+[2] The condition number is large, 9.1e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.

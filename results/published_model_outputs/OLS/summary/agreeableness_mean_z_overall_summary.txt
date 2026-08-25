@@ -1,0 +1,46 @@
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     agreeableness_mean_z   R-squared:                       0.320
+Model:                              OLS   Adj. R-squared:                  0.255
+Method:                   Least Squares   F-statistic:                     164.0
+Date:                  Wed, 04 Mar 2026   Prob (F-statistic):          1.06e-127
+Time:                          01:46:34   Log-Likelihood:                -311.45
+No. Observations:                   254   AIC:                             668.9
+Df Residuals:                       231   BIC:                             750.3
+Df Model:                            22                                         
+Covariance Type:                    HC1                                         
+======================================================================================================
+                                         coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------
+const                                 -0.0935      0.176     -0.531      0.595      -0.438       0.251
+env_greenery_z                        -0.2139      0.180     -1.186      0.236      -0.568       0.140
+env_open_space_z                       0.0463      0.197      0.235      0.814      -0.340       0.433
+env_building_z                        -0.0307      0.146     -0.210      0.834      -0.318       0.256
+env_road_z                            -0.0059      0.198     -0.030      0.976      -0.394       0.382
+env_active_infra_z                    -0.0378      0.081     -0.464      0.643      -0.197       0.122
+env_active_presence_z                 -0.1373      0.122     -1.125      0.260      -0.376       0.102
+env_vehicle_presence_z                 0.0180      0.081      0.223      0.823      -0.140       0.176
+env_physical_boundaries_z             -0.1523      0.126     -1.205      0.228      -0.400       0.095
+env_symbolic_us_flag_z                -0.1744      0.078     -2.244      0.025      -0.327      -0.022
+env_surveillance_cctv_z               -0.0043      0.104     -0.041      0.967      -0.209       0.200
+visual_complexity_mean_z               0.2705      0.160      1.687      0.092      -0.044       0.585
+us_census_male_share_z                -0.0984      0.093     -1.054      0.292      -0.281       0.085
+us_census_age_15_29_share_z            0.0059      0.176      0.033      0.973      -0.338       0.350
+us_census_age_30_44_share_z           -0.2540      0.119     -2.135      0.033      -0.487      -0.021
+us_census_age_45_59_share_z           -0.0160      0.123     -0.130      0.897      -0.257       0.225
+us_census_age_60_plus_share_z          0.1182      0.136      0.869      0.385      -0.148       0.385
+us_census_population_density_km2_z    -0.0775      0.091     -0.851      0.395      -0.256       0.101
+acs_median_income_z                    0.3444      0.122      2.824      0.005       0.105       0.583
+acs_racial_diversity_z                 0.2086      0.084      2.486      0.013       0.044       0.373
+city_austin_texas                     -0.3096      0.206     -1.506      0.132      -0.712       0.093
+city_dallas_texas                      0.6867      0.277      2.482      0.013       0.144       1.229
+city_houston_texas                    -0.0214      0.293     -0.073      0.942      -0.596       0.553
+==============================================================================
+Omnibus:                        3.462   Durbin-Watson:                   1.954
+Prob(Omnibus):                  0.177   Jarque-Bera (JB):                3.998
+Skew:                           0.051   Prob(JB):                        0.135
+Kurtosis:                       3.606   Cond. No.                         16.0
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC1)

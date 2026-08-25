@@ -1,0 +1,72 @@
+Trait: conscientiousness_mean_z
+Level: austin_texas
+Weights info: {'n_before': 52, 'n_after': 52, 'islands_dropped': 0}
+Moran_I_resid: 0.04313703459434708
+Moran_p_sim:   0.229
+
+REGRESSION RESULTS
+------------------
+
+SUMMARY OF OUTPUT: MAXIMUM LIKELIHOOD SPATIAL LAG (METHOD = FULL)
+-----------------------------------------------------------------
+Data set            :     unknown
+Weights matrix      :     unknown
+Dependent Variable  :conscientiousness_mean_z                Number of Observations:          52
+Mean dependent var  :     -0.5086                Number of Variables   :          21
+S.D. dependent var  :      0.7873                Degrees of Freedom    :          31
+Pseudo R-squared    :      0.5135
+Spatial Pseudo R-squared:  0.5084
+Log likelihood      :    -42.1567
+Sigma-square ML     :      0.2957                Akaike info criterion :     126.313
+S.E of regression   :      0.5438                Schwarz criterion     :     167.290
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     z-Statistic     Probability
+------------------------------------------------------------------------------------
+            CONSTANT        -2.22330         0.43814        -5.07437         0.00000
+      env_greenery_z        -0.74039         0.30720        -2.41015         0.01595
+    env_open_space_z        -0.48729         0.39762        -1.22551         0.22038
+      env_building_z         0.11405         0.50658         0.22514         0.82187
+          env_road_z         0.14153         0.22642         0.62506         0.53193
+  env_active_infra_z         0.14381         0.50580         0.28431         0.77617
+env_active_presence_z        -0.01371         0.25612        -0.05354         0.95731
+env_vehicle_presence_z         0.16394         0.13422         1.22143         0.22192
+env_physical_boundaries_z        -1.76466         0.43977        -4.01266         0.00006
+env_symbolic_us_flag_z        -0.41309         0.21214        -1.94728         0.05150
+env_surveillance_cctv_z        -0.37885         0.64845        -0.58425         0.55905
+visual_complexity_mean_z         0.22866         0.40592         0.56331         0.57323
+us_census_male_share_z         0.62429         0.20514         3.04322         0.00234
+us_census_age_15_29_share_z        -0.64167         0.25394        -2.52687         0.01151
+us_census_age_30_44_share_z        -0.51602         0.18885        -2.73245         0.00629
+us_census_age_45_59_share_z        -0.33660         0.19156        -1.75721         0.07888
+us_census_age_60_plus_share_z        -0.17123         0.16972        -1.00889         0.31303
+us_census_population_density_km2_z        -0.10583         0.26952        -0.39265         0.69458
+ acs_median_income_z         0.27856         0.21587         1.29044         0.19690
+acs_racial_diversity_z        -0.37297         0.14200        -2.62650         0.00863
+W_conscientiousness_mean_z         0.09437         0.18391         0.51312         0.60787
+------------------------------------------------------------------------------------
+Warning: Variable(s) ['const'] removed for being constant.
+
+SPATIAL LAG MODEL IMPACTS
+Impacts computed using the 'simple' method.
+            Variable         Direct        Indirect          Total
+      env_greenery_z        -0.7404         -0.0771         -0.8175
+    env_open_space_z        -0.4873         -0.0508         -0.5381
+      env_building_z         0.1141          0.0119          0.1259
+          env_road_z         0.1415          0.0147          0.1563
+  env_active_infra_z         0.1438          0.0150          0.1588
+env_active_presence_z        -0.0137         -0.0014         -0.0151
+env_vehicle_presence_z         0.1639          0.0171          0.1810
+env_physical_boundaries_z        -1.7647         -0.1839         -1.9485
+env_symbolic_us_flag_z        -0.4131         -0.0430         -0.4561
+env_surveillance_cctv_z        -0.3789         -0.0395         -0.4183
+visual_complexity_mean_z         0.2287          0.0238          0.2525
+us_census_male_share_z         0.6243          0.0651          0.6893
+us_census_age_15_29_share_z        -0.6417         -0.0669         -0.7085
+us_census_age_30_44_share_z        -0.5160         -0.0538         -0.5698
+us_census_age_45_59_share_z        -0.3366         -0.0351         -0.3717
+us_census_age_60_plus_share_z        -0.1712         -0.0178         -0.1891
+us_census_population_density_km2_z        -0.1058         -0.0110         -0.1169
+ acs_median_income_z         0.2786          0.0290          0.3076
+acs_racial_diversity_z        -0.3730         -0.0389         -0.4118
+================================ END OF REPORT =====================================
