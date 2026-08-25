@@ -171,14 +171,15 @@ cb.set_ticklabels(["-2\u03c3", "-1\u03c3", "0", "1\u03c3", "2\u03c3"], fontsize=
 cax.set_title("Z-score", fontsize=12, pad=4)
 
 out1 = OUT_MATRIX / "all_cities_features_matrix_zscore.png"
-plt.savefig(out1, dpi=200, bbox_inches="tight", facecolor="white")
+plt.savefig(out1, dpi=600, bbox_inches="tight", facecolor="white")
 plt.close(fig)
 print(f"  Saved: {out1}")
 
 # ---------------------------------------------------------------------------
-# Figure 2: Appendix ZIP inclusion/exclusion map
+# Figure 2 (KangFigure7): Appendix ZIP inclusion/exclusion map
+# Grayscale print version: solid gray = included, /// hatch = excluded
 # ---------------------------------------------------------------------------
-print("\n--- Figure 2: Appendix ZIP inclusion/exclusion map ---")
+print("\n--- Figure 2: Appendix ZIP inclusion/exclusion map (grayscale) ---")
 
 mask_pc   = gdf["participant_count"]  >= MIN_PARTICIPANT
 mask_grid = gdf["grid_coverage_mean"] >= MIN_GRID_COVERAGE
@@ -199,60 +200,59 @@ print(f"  excl_grid:  {n['excl_grid']}  (grid_coverage_mean < {MIN_GRID_COVERAGE
 print(f"  excl_both:  {n['excl_both']}  (both filters)")
 print(f"  total:      {sum(n.values())}")
 
-STATUS_COLORS = {
-    "included":   "#2ca02c",
-    "excl_count": "#d62728",
-    "excl_grid":  "#ff7f0e",
-    "excl_both":  "#9467bd",
-}
-STATUS_LABELS = {
-    "included":   f"Included in model  (n={n['included']})",
-    "excl_count": f"Excluded: participant count < {MIN_PARTICIPANT}  (n={n['excl_count']})",
-    "excl_grid":  f"Excluded: grid coverage < {MIN_GRID_COVERAGE}  (n={n['excl_grid']})",
-    "excl_both":  f"Excluded: both filters  (n={n['excl_both']})",
+# Collapse to two categories for grayscale-compatible print
+gdf["_status2"] = gdf["_status"].apply(
+    lambda s: "included" if s == "included" else "excluded"
+)
+n2 = {
+    "included": n["included"],
+    "excluded": n["excl_count"] + n["excl_grid"] + n["excl_both"],
 }
 
-# Draw included ZIPs first (bottom layer), excluded on top so they are visible
-DRAW_ORDER = ["included", "excl_count", "excl_grid", "excl_both"]
+plt.rcParams["hatch.linewidth"] = 0.15  # very thin hatch lines → dense texture
 
-fig, axes = plt.subplots(1, n_cols, figsize=(5 * n_cols, 5.5))
+STATUS2_STYLES = {
+    "included": dict(facecolor="#aaaaaa", edgecolor="black", linewidth=0.4),
+    "excluded": dict(facecolor="white",   edgecolor="black", linewidth=0.4, hatch="////////"),
+}
+STATUS2_LABELS = {
+    "included": f"Included in model (n={n2['included']})",
+    "excluded": f"Excluded from model (n={n2['excluded']})",
+}
+DRAW_ORDER2 = ["included", "excluded"]
+
+fig, axes = plt.subplots(1, n_cols, figsize=(7, 2.5))
 fig.patch.set_facecolor("white")
 
 for col_idx, city in enumerate(CITIES):
     ax = axes[col_idx]
     cg = gdf[gdf["city"] == city]
     ax.set_facecolor("white")
-    for status in DRAW_ORDER:
-        sub = cg[cg["_status"] == status]
+    for status in DRAW_ORDER2:
+        sub = cg[cg["_status2"] == status]
         if len(sub):
-            sub.plot(ax=ax, color=STATUS_COLORS[status],
-                     edgecolor="white", linewidth=0.3, alpha=0.9)
+            sub.plot(ax=ax, **STATUS2_STYLES[status])
     cx, cy = city_info[city]["center"]
     r = city_info[city]["radius"]
     ax.set_xlim(cx - r, cx + r)
     ax.set_ylim(cy - r, cy + r)
     ax.axis("off")
-    ax.set_title(CITY_LABELS[city], fontsize=14, pad=6, fontweight="bold")
+    ax.set_title(CITY_LABELS[city], fontsize=8, pad=4, fontweight="bold")
 
-patches = [
-    mpatches.Patch(color=STATUS_COLORS[s], label=STATUS_LABELS[s])
-    for s in DRAW_ORDER
+patches2 = [
+    mpatches.Patch(label=STATUS2_LABELS[s], **STATUS2_STYLES[s])
+    for s in DRAW_ORDER2
 ]
 fig.legend(
-    handles=patches, loc="lower center", ncol=2,
-    fontsize=10, framealpha=0.92,
-    bbox_to_anchor=(0.5, -0.10),
+    handles=patches2, loc="lower center", ncol=2,
+    fontsize=7, framealpha=0.92,
+    bbox_to_anchor=(0.5, 0.02),
 )
-n_total    = sum(n.values())
-n_excluded = n_total - n["included"]
-fig.suptitle(
-    f"ZIP code model inclusion  "
-    f"[total: {n_total}  |  included: {n['included']}  |  excluded: {n_excluded}]",
-    fontsize=13, fontweight="bold", y=1.02,
-)
+# Use explicit margins so the saved file is exactly 7 in wide (no bbox trim)
+fig.subplots_adjust(left=0.005, right=0.995, top=0.88, bottom=0.22)
 
-out2 = OUT_APPENDIX / "zipcode_model_inclusion_mask.png"
-plt.savefig(out2, dpi=200, bbox_inches="tight", facecolor="white")
+out2 = OUT_APPENDIX / "KangFigure7_zipcode_inclusion.png"
+plt.savefig(out2, dpi=600, facecolor="white")
 plt.close(fig)
 print(f"  Saved: {out2}")
 

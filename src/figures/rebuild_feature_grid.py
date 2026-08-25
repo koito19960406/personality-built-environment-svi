@@ -20,8 +20,9 @@ from PIL import Image, ImageDraw, ImageFont
 # Paths
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(os.environ.get("PERSONALITY_SVI_ROOT", Path(__file__).resolve().parents[2]))
-OUTPUT_DIR   = PROJECT_ROOT / "reports/figures/feature_percentiles"
-OUT_GRID     = OUTPUT_DIR / "feature_percentiles_grid.png"
+# Individual panel images live in the manuscript's combined_260210 folder
+OUTPUT_DIR   = PROJECT_ROOT / "manuscript/figures/feature_percentiles_combined_260210"
+OUT_GRID     = PROJECT_ROOT / "manuscript/figures/feature_percentiles/feature_percentiles_grid.png"
 
 # ---------------------------------------------------------------------------
 # Feature order (must match the order used when images were generated)
@@ -167,7 +168,7 @@ def build_grid():
         fig.text(0.13, y_mid, label, ha="center", va="center",
                  fontsize=12, weight="bold", rotation=90)
 
-    fig.savefig(OUT_GRID, dpi=300, bbox_inches="tight", facecolor="white")
+    fig.savefig(OUT_GRID, dpi=600, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"\nSaved: {OUT_GRID}")
 

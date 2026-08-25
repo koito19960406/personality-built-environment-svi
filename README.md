@@ -154,12 +154,18 @@ included so the derivation is inspectable, not so it can be re-executed; server
 paths have been replaced with the `PERSONALITY_SVI_ROOT` and `SVI_IMAGE_DIR`
 environment variables.
 
-Scripts in `src/figures/` sit in between. `generate_city_figures.ipynb` and
-`generate_alignment_figures.py` work from the ZIP-code dataset but expect the
-unfiltered 340-ZIP-code file, which is not published here.
-`generate_streetview_feature_grid.py` and `generate_segmentation_figure.py` need
-the panorama store and GPU models. The figures they produced are in
-`results/figures/`.
+Scripts in `src/figures/` sit in between, and each is missing one input:
+
+| Script | Produces | Missing input |
+|---|---|---|
+| `generate_city_figures.ipynb` | Figures 3 and 4 (trait and feature maps) | The unfiltered 340-ZIP-code dataset |
+| `generate_alignment_figures.py` | Figure 7 (ZIP inclusion map) | The unfiltered 340-ZIP-code dataset |
+| `generate_temporal_histogram.py` | Figure 2 (survey vs imagery by year) | Per-year count table from the interim data |
+| `generate_streetview_feature_grid.py` | Figure 5 (feature examples) | Panorama store and GPU segmentation models |
+| `generate_segmentation_figure.py` | Segmentation illustration | Panorama and GPU segmentation models |
+| `rebuild_feature_grid.py` | Re-assembles Figure 5 from saved panels | The saved panel images |
+
+The figures they produced are in `results/figures/`, at publication resolution.
 
 **Individual-level survey data is not published.** The respondent-level file
 contains IP addresses, geolocation coordinates, and free-text responses, and
