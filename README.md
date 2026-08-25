@@ -13,6 +13,11 @@ environment characteristics extracted from Google Street View imagery across fou
 Texas cities — Austin, Dallas, Houston, and San Antonio — using pooled and
 city-specific OLS and spatial lag (SAR) models.
 
+![Conceptual framework: Big Five personality survey responses and Google Street View panoramas are filtered to four Texas cities, spatially joined at the ZIP code level, and related through regression models, with street view features derived by semantic segmentation.](docs/figures/framework.png)
+
+*Figure 1 — The data processing and analytical pipeline. Full resolution:
+[`results/figures/KangFigure1.tif`](results/figures/KangFigure1.tif).*
+
 This repository contains the minimum needed to reproduce the published models:
 the analysis dataset, the modelling code, and the published outputs to check
 against. The upstream imagery pipeline is included for reference but cannot be
@@ -60,6 +65,8 @@ results/
   reproduced/                        Created by reproduce_models.py (git-ignored)
 
 reference_pipeline/                  Upstream pipeline, reference only, not runnable
+
+docs/figures/                        Web-resolution PNGs of the figures shown above
 ```
 
 ---
@@ -69,6 +76,12 @@ reference_pipeline/                  Upstream pipeline, reference only, not runn
 `data/analysis_dataset_zipcode.parquet` is the analysis-ready table behind the
 published models: **254 ZIP codes**, aggregated from **77,716 survey
 respondents**, with polygon geometry attached as WKT.
+
+![Choropleth maps of the five Big Five personality traits across ZIP codes in Austin, Dallas, Houston, and San Antonio. Red indicates above-average trait levels and blue below-average, as z-scores relative to each city mean.](docs/figures/personality_maps.png)
+
+*Figure 3 — Spatial distribution of the five traits across the four cities,
+z-scored within city. These are the outcome variables in every model. Full
+resolution: [`results/figures/KangFigure3.tif`](results/figures/KangFigure3.tif).*
 
 It is already **post-filter**. The two quality filters described in the paper —
 `participant_count >= 20` and `grid_coverage_mean >= 0.03` — were applied
